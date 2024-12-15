@@ -8,7 +8,7 @@ class DBSettings(BaseSettings):
     pg_user: str
     pg_password: str
 
-    model_config = SettingsConfigDict(env_file='../.env')
+    model_config = SettingsConfigDict(env_file=".env")
 
     def get_db_urL(self):
         return f'postgresql+asyncpg://{self.pg_user}:{self.pg_password}@{self.pg_host}:{self.pg_port}/{self.pg_db}'
